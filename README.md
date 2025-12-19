@@ -15,7 +15,7 @@ This project provides a data-driven evaluation of **Mint Classics'** storage fac
 ### 1. Low-Demand Product Identification
 We cross-validated demand with current inventory to find products with low sales velocity. These are strong candidates for discontinuation to free up warehouse capacity.
 
-```sql
+
 -- Identifying top 10 products with high stock but low demand
 SELECT 
     p.productCode, 
@@ -66,7 +66,7 @@ SLA Breach Rate: 83.97%
 ### 1. Low-Demand Product Identification
 We cross-validated demand with current inventory to find products with low sales velocity. These are strong candidates for discontinuation to free up warehouse capacity.
 
-```sql
+sql
 -- Identifying top 10 products with high stock but low demand
 SELECT 
     p.productCode, 
