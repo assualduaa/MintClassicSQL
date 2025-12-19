@@ -15,7 +15,7 @@ This project provides a data-driven evaluation of **Mint Classics'** storage fac
 ### 1. Low-Demand Product Identification
 We cross-validated demand with current inventory to find products with low sales velocity. These are strong candidates for discontinuation to free up warehouse capacity.
 
-
+```sql
 -- Identifying top 10 products with high stock but low demand
 SELECT 
     p.productCode, 
@@ -30,6 +30,7 @@ JOIN (
     ORDER BY total_units_sold ASC
     LIMIT 10
 ) low_demand ON p.productCode = low_demand.productCode;
+
 
 2. Warehouse Closure Analysis
 Based on physical load and outbound demand, Warehouse D was identified as the least utilized facility.
@@ -94,7 +95,7 @@ WHERE o.shippedDate IS NOT NULL;
 
 📉 Key Metric:SLA Met Rate: 16.03%SLA Breach Rate: 83.97%
 
-💡 ## Final Suggestions & Conclusion
+💡 #Final Suggestions & Conclusion
 # Inventory Optimization:
 10 low-performing products are recommended for discontinuation, which would immediately lower space requirements.Facility Closure: Warehouse D can be closed with minimal risk, provided its high-velocity stock is moved to Warehouse A or B.
 Critical SLA Warning: Mint Classics is currently failing its 24-hour promise (only 16% compliance). Closing a facility without reorganization will worsen this.RecommendationsPrioritize High-Velocity Stock: High-demand items must be relocated to the dispatch points nearest to transportation hubs.Improve Workflow: Before closing any facility, the internal picking and packing process must be optimized to address the existing 84% SLA breach rate.Outcome: By liquidating "dead stock" and centralizing high-demand items, Mint Classics can successfully close Warehouse D, save on operational costs, and actually improve fulfillment times.
